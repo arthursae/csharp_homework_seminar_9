@@ -3,9 +3,9 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-int OutputOrderedRangeOfNaturalNumbers(int toNumber, int fromNumber = 1, bool isDescending = true)
+uint OutputOrderedRangeOfNaturalNumbers(uint toNumber, uint fromNumber = 1, bool isDescending = true)
 {
-    int min,
+    uint min,
         max;
 
     if (fromNumber > toNumber)
@@ -37,14 +37,14 @@ int OutputOrderedRangeOfNaturalNumbers(int toNumber, int fromNumber = 1, bool is
     }
 }
 
-int GetUserInputData(string msg)
+uint GetUserInputData(string msg)
 {
     Console.Write(msg);
     string rawUserInput = Console.ReadLine();
 
     if (Int32.TryParse(rawUserInput, out _))
     {
-        int num = Convert.ToInt32(rawUserInput);
+        uint num = Convert.ToUInt32(rawUserInput);
         return (num > 0) ? num : GetUserInputData(msg);
     }
     else
@@ -56,5 +56,5 @@ int GetUserInputData(string msg)
 
 Console.Clear();
 
-int userInput = GetUserInputData("Введите натуральное число: ");
-int lastNum = OutputOrderedRangeOfNaturalNumbers(userInput);
+uint userInput = GetUserInputData("Введите натуральное число: ");
+uint lastNum = OutputOrderedRangeOfNaturalNumbers(userInput);
