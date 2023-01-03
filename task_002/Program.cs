@@ -3,7 +3,7 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-uint GetSumOfAllElementsWithinTheRange(uint fromNumber, uint toNumber, uint sum = 0)
+uint GetSumOfAllElementsWithinTheRange(uint fromNumber, uint toNumber)
 {
     if (fromNumber > toNumber)
     {
@@ -12,10 +12,9 @@ uint GetSumOfAllElementsWithinTheRange(uint fromNumber, uint toNumber, uint sum 
         fromNumber = temp;
     }
 
-    sum += fromNumber;
     return (fromNumber == toNumber)
-        ? sum
-        : GetSumOfAllElementsWithinTheRange(fromNumber + 1, toNumber, sum);
+        ? fromNumber
+        : fromNumber + GetSumOfAllElementsWithinTheRange(fromNumber + 1, toNumber);
 }
 
 uint GetUserInputData(string msg)
