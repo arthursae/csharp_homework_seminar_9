@@ -41,7 +41,7 @@ uint GetUserInputData(string msg)
     Console.Write(msg);
     string rawUserInput = Console.ReadLine();
 
-    if (Int32.TryParse(rawUserInput, out _))
+    if (UInt32.TryParse(rawUserInput, out _))
     {
         uint num = Convert.ToUInt32(rawUserInput);
         return (num > 0) ? num : GetUserInputData(msg);
