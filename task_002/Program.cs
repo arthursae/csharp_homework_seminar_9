@@ -3,11 +3,11 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-int GetSumOfAllElementsWithinTheRange(int fromNumber, int toNumber, int sum = 0)
+uint GetSumOfAllElementsWithinTheRange(uint fromNumber, uint toNumber, uint sum = 0)
 {
     if (fromNumber > toNumber)
     {
-        int temp = toNumber;
+        uint temp = toNumber;
         toNumber = fromNumber;
         fromNumber = temp;
     }
@@ -18,14 +18,14 @@ int GetSumOfAllElementsWithinTheRange(int fromNumber, int toNumber, int sum = 0)
         : GetSumOfAllElementsWithinTheRange(fromNumber + 1, toNumber, sum);
 }
 
-int GetUserInputData(string msg)
+uint GetUserInputData(string msg)
 {
     Console.Write(msg);
     string rawUserInput = Console.ReadLine();
 
-    if (Int32.TryParse(rawUserInput, out _))
+    if (UInt32.TryParse(rawUserInput, out _))
     {
-        int num = Convert.ToInt32(rawUserInput);
+        uint num = Convert.ToUInt32(rawUserInput);
         return (num > 0) ? num : GetUserInputData(msg);
     }
     else
@@ -35,13 +35,13 @@ int GetUserInputData(string msg)
     }
 }
 Console.Clear();
-int m = GetUserInputData("Введите натуральное число M: ");
-int n = GetUserInputData("Введите натуральное число N: ");
-int result = GetSumOfAllElementsWithinTheRange(m, n);
+uint m = GetUserInputData("Введите натуральное число M: ");
+uint n = GetUserInputData("Введите натуральное число N: ");
+uint result = GetSumOfAllElementsWithinTheRange(m, n);
 
 if(m > n)
 {
-    int temp = n;
+    uint temp = n;
     n = m;
     m = temp;
 }
