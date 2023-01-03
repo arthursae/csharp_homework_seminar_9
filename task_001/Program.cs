@@ -54,6 +54,5 @@ uint GetUserInputData(string msg)
 }
 
 Console.Clear();
-
 uint userInput = GetUserInputData("Введите натуральное число: ");
 uint dummyVar = OutputOrderedRangeOfNaturalNumbers(userInput);
