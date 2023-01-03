@@ -32,5 +32,5 @@ uint GetUserInputData(string msg)
 Console.Clear();
 uint n = GetUserInputData("Введите небольшое натуральное число N: ");
 uint m = GetUserInputData("Введите небольшое натуральное число M: ");
-uint result =  Ackermann(n, m);
+uint result = Ackermann(n, m);
 Console.WriteLine("A(m,n) = " + result);
