@@ -5,8 +5,7 @@
 
 uint OutputOrderedRangeOfNaturalNumbers(uint toNumber, uint fromNumber = 1, bool isDescending = true)
 {
-    uint min,
-        max;
+    uint min, max;
 
     if (fromNumber > toNumber)
     {
@@ -57,4 +56,4 @@ uint GetUserInputData(string msg)
 Console.Clear();
 
 uint userInput = GetUserInputData("Введите натуральное число: ");
-uint lastNum = OutputOrderedRangeOfNaturalNumbers(userInput);
+uint dummyVar = OutputOrderedRangeOfNaturalNumbers(userInput);
